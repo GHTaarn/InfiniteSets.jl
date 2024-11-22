@@ -6,11 +6,18 @@ struct UniversalSet end
 
 Base.intersect!(s1, s2::UniversalSet) = s1
 Base.intersect!(s1::AbstractSet, s2::UniversalSet) = s1
+Base.intersect!(s1::AbstractVector, s2::UniversalSet) = s1
 Base.intersect(s1, s2::UniversalSet) = s1
+Base.intersect(s1::UniversalSet, s2::UniversalSet) = s1
+Base.intersect(s1::AbstractSet, s2::UniversalSet) = s1
+Base.intersect(s1::AbstractVector, s2::UniversalSet) = s1
 Base.intersect(s1::UniversalSet, args...) = intersect(args...)
 Base.union!(s1::UniversalSet, args...) = UniversalSet()
+Base.union(s1::UniversalSet, s2::UniversalSet, args...) = UniversalSet()
 Base.union(s1::UniversalSet, args...) = UniversalSet()
+Base.union(s1::BitSet, s2::UniversalSet, args...) = UniversalSet()
 Base.union(s1, s2::UniversalSet, args...) = UniversalSet()
+Base.setdiff(s1::AbstractSet, s2::UniversalSet) = empty(s1)
 Base.setdiff(s1, s2::UniversalSet) = empty(s1)
 Base.in(x, s1::UniversalSet) = true
 Base.issubset(x, s1::UniversalSet) = true
