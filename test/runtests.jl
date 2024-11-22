@@ -18,9 +18,12 @@ using InfiniteSets
     @test [4,7] ∪ u == u
     @test Set([4,"7"]) ∪ u == u
     @test u ∪ u == u
+    @test union(BitSet(10:20), u) == u
     @test setdiff(1:5, u) |> isempty
     @test setdiff(Set(1:8), u) |> isempty
     @test setdiff(u, u) |> isempty
+    @test setdiff(u, []) == u
+    @test_throws Exception setdiff(u, s)
 end
 
 @testset "ambiguities" begin
