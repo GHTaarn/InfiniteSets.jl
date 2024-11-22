@@ -6,6 +6,7 @@ using InfiniteSets
     s = ["","#"]
 
     @test !isempty(u)
+    @test empty(u) |> isempty
     @test 4 ∈ u
     @test u ∈ u
     @test 1:7 ⊆ u

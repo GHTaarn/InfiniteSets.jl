@@ -17,4 +17,11 @@ Base.issubset(x, s1::UniversalSet) = true
 Base.isempty(x::UniversalSet) = false
 Base.IteratorSize(x::UniversalSet) = Base.IsInfinite()
 
+"""
+    empty(s::UniversalSet)
+
+Returns `Set{Any}()`
+"""
+Base.empty(s::UniversalSet) = Set()
+
 end # module InfiniteSets
