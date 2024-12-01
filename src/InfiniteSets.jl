@@ -23,7 +23,12 @@ Base.setdiff(s1::UniversalSet, s2::UniversalSet) = empty(s1)
 Base.setdiff(s1::UniversalSet, s2) = isempty(s2) ? s1 : error("s2 must be empty")
 Base.in(x, s1::UniversalSet) = true
 Base.issubset(x, s1::UniversalSet) = true
+Base.issubset(s1::UniversalSet, s2::UniversalSet) = true
+Base.issubset(s1::UniversalSet, s2) = Base.IteratorSize(s2) in [Base.IsInfinite(), Base.SizeUnknown()] ? error("Not implemented") : false
 Base.isempty(x::UniversalSet) = false
+@static if v"1.4" <= VERSION <= v"1.11"
+    Base.hasfastin(x::UniversalSet) = true
+end
 Base.IteratorSize(x::UniversalSet) = Base.IsInfinite()
 
 """

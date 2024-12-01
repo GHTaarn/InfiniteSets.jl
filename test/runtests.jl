@@ -9,9 +9,12 @@ using InfiniteSets
     @test empty(u) |> isempty
     @test 4 ∈ u
     @test u ∈ u
+    @test "123" in u
     @test 1:7 ⊆ u
     @test [] ⊆ u
+    @test u ⊈ [pi, "##", '8', 1//4]
     @test u ⊆ u
+    @test intersect(u, s) == s
     @test s ∩ u == s
     @test u ∩ u == u
     @test BitSet(10:20) ∩ u == BitSet(10:20)

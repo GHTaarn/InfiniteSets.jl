@@ -17,7 +17,10 @@ using InfiniteSets
 u = UniversalSet();
 
 7 ⊆ u # true
-[4,7] ∪ u # u
+[stdout, pi] ⊈ u # false
+issubset(8:16, u) # true
+Set() ⊇ u # false
+Set([4,7]) ∪ u # u
 union(["","#"], u) # u
 ["","#"] ∩ u # ["","#"]
 intersect(1:55, u) # 1:55
