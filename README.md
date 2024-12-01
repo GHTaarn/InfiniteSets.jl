@@ -3,6 +3,13 @@
 A [Julia](https://julialang.org) package for sets with an infinite number of
 elements. At present, only one such type is implemented: `UniversalSet`
 
+## Installation
+
+```julia
+using Pkg
+pkg"add https://github.com/GHTaarn/InfiniteSets.jl#release-0.1"
+```
+
 ## UniversalSet
 
 This is the Universal set that contains everything. Sources claim that
