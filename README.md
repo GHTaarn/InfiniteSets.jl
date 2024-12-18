@@ -5,9 +5,11 @@ elements. At present, only one such type is implemented: `UniversalSet`
 
 ## Installation
 
+In the Julia REPL, type
+
 ```julia
 using Pkg
-pkg"add https://github.com/GHTaarn/InfiniteSets.jl#release-0.1"
+pkg"add InfiniteSets"
 ```
 
 ## UniversalSet
